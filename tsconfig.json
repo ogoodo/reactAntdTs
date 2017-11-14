@@ -17,6 +17,10 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
+    "baseUrl": "./", // 解析非相对模块名的基准目录
+    "paths": {
+      "@src/*": ["./src/*"]
+    },
     "allowSyntheticDefaultImports": true
   },
   "exclude": [

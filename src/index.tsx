@@ -8,7 +8,7 @@ import { Menu} from 'antd';
 const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;
 import { createStore } from 'redux';
-import { enthusiasm } from './modules/demo/test-redux/reducers/index';
+import { enthusiasm } from '@src/modules/demo/test-redux/reducers/index';
 import { StoreState } from './types/index';
 // import Hello from './containers/Hello';
 import { Provider } from 'react-redux';

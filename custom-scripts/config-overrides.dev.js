@@ -3,7 +3,7 @@ const rewireLess = require('react-app-rewire-less');
 const fs = require('fs');
 const tsImportPluginFactory = require('ts-import-plugin');
 const path = require('path');
-const SRC_PATH = path.join(__dirname, "./src");
+const SRC_PATH = path.join(__dirname, "../");
 console.log(SRC_PATH);
 
 module.exports = function override(config, env) {
@@ -22,7 +22,11 @@ module.exports = function override(config, env) {
           before: [ tsImportPluginFactory({ libraryName: "antd", style: true }) ]
         })
     };
-    // fs.writeFileSync('./temp----config2.json', JSON.stringify(tsload));
     config.resolve.alias['@src'] = path.resolve(SRC_PATH, 'src');
+    // config.resolve.plugins = [(new TsConfigPathsPlugin({
+    //     configFileName: "tsconfig.json", compiler: "typescript",
+    // }))]
+    // fs.writeFileSync('./temp----config2.json', JSON.stringify(tsload));
+    // fs.writeFileSync('./temp----config1.json', JSON.stringify(config.resolve.alias));
     return config;
 };
