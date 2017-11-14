@@ -7,17 +7,41 @@
 
 import {RouteProps} from 'react-router-dom'
 
-import Apple from './components/fruits/Apple'
-import Banana from './components/fruits/banana'
+import Apple from './modules/demo/test-router/components/fruits/Apple'
+import Banana from './modules/demo/test-router/components/fruits/banana'
 
-import Cabbage from './components/vegetables/cabbage'
-import Radish from './components/vegetables/radish'
+import Cabbage from './modules/demo/test-router/components/vegetables/cabbage'
+import Radish from './modules/demo/test-router/components/vegetables/radish'
+
+import Hello from './modules/demo/test-redux/containers/Hello';
+// import Hello from './components/Hello';
 
 interface PowerRouteProps extends RouteProps{
     name:string;
 }
 
 export const _routes=[
+    {
+        id:'hello',
+        name:'测试',
+        routes:[
+            {
+                name:'hi',
+                path:'/hello2',
+                component: Hello
+            },
+            {
+                name:'香蕉',
+                path:'/banana',
+                component:Banana
+            },
+            // {
+            //     name:'香蕉',
+            //     path:'/banana',
+            //     component:Banana
+            // }
+        ]
+    },
     {
         id:'fruits',
         name:'水果',
@@ -27,11 +51,11 @@ export const _routes=[
                 path:'/apple',
                 component:Apple
             },
-            {
-                name:'香蕉',
-                path:'/banana',
-                component:Banana
-            }
+            // {
+            //     name:'香蕉',
+            //     path:'/banana',
+            //     component:Banana
+            // }
         ]
     },
     {
@@ -43,11 +67,11 @@ export const _routes=[
                 path:'/cabbage',
                 component:Cabbage
             },
-            {
-                name:'萝卜',
-                path:'/radish',
-                component:Radish
-            }
+            // {
+            //     name:'萝卜',
+            //     path:'/radish',
+            //     component:Radish
+            // }
         ]
     }
 ];

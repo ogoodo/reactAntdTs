@@ -2,6 +2,9 @@ const { injectBabelPlugin } = require('react-app-rewired');
 const rewireLess = require('react-app-rewire-less');
 const fs = require('fs');
 const tsImportPluginFactory = require('ts-import-plugin');
+const path = require('path');
+const SRC_PATH = path.join(__dirname, "./src");
+console.log(SRC_PATH);
 
 module.exports = function override(config, env) {
     // do stuff with the webpack config...
@@ -19,6 +22,7 @@ module.exports = function override(config, env) {
           before: [ tsImportPluginFactory({ libraryName: "antd", style: true }) ]
         })
     };
-    fs.writeFileSync('./temp----config2.json', JSON.stringify(tsload));
+    // fs.writeFileSync('./temp----config2.json', JSON.stringify(tsload));
+    config.resolve.alias['@src'] = path.resolve(SRC_PATH, 'src');
     return config;
 };

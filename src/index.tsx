@@ -1,14 +1,16 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
-import { Route, Switch, Link, BrowserRouter} from 'react-router-dom'
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+/* tslint:disable-next-line:no-unused-variable */
+import { Route, Switch, Link, BrowserRouter} from 'react-router-dom';
 // 提供antd的本地语言支持
-import { Menu} from 'antd'
+import { Menu} from 'antd';
+/* tslint:disable-next-line:no-unused-variable */
 const MenuItem = Menu.Item;
 const SubMenu = Menu.SubMenu;
 import { createStore } from 'redux';
-import { enthusiasm } from './reducers/index';
+import { enthusiasm } from './modules/demo/test-redux/reducers/index';
 import { StoreState } from './types/index';
-import Hello from './containers/Hello';
+// import Hello from './containers/Hello';
 import { Provider } from 'react-redux';
 
 const store = createStore<StoreState>(enthusiasm, {
@@ -16,7 +18,7 @@ const store = createStore<StoreState>(enthusiasm, {
   languageName: 'TypeScript',
 });
 
-import {maproutes,_routes} from './routes'
+import {maproutes, _routes} from './routes'
 
 class Navigations extends React.Component {
     render() {
@@ -25,19 +27,22 @@ class Navigations extends React.Component {
                 {_routes.map(routes=>{
                     return (
                     <SubMenu key={routes.id} title={routes.name}>
-                        {routes.routes.map(route=>{
-                            return (
-                                <MenuItem key={`route-${route.path}`}>
-                                    <Link to={route.path} key={`route-link-${route.path}`}>{route.name}</Link>
-                                </MenuItem>
-                            )
-                        })}
+                        {
+                            routes.routes.map((route) => {
+                                return (
+                                    <MenuItem key={`route-${route.path}`}>
+                                        <Link to={route.path} key={`route-link-${route.path}`}>{route.name}</Link>
+                                    </MenuItem>
+                                )
+                            })
+                        }
                     </SubMenu>)
                 })}
             </Menu>
         )
     }
 }
+
 class NotFoundView extends React.Component {
     render() {
         return (
@@ -48,6 +53,7 @@ class NotFoundView extends React.Component {
         );
     }
 }
+
 const Router = () => (
     <BrowserRouter>
         <Switch>
@@ -60,9 +66,11 @@ const Router = () => (
         </Switch>
     </BrowserRouter>
 )
+
 console.log(Router);
 ReactDOM.render(
     <Provider store={store}>
-        {/* <Router/> */}
-        <Hello />
+        <Router/>
     </Provider>, document.getElementById('root'));
+
+// <Hello />

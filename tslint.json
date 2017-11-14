@@ -95,5 +95,8 @@
             "check-type",
             "check-typecast"
         ]
+        // "noUnusedLocals": false,
+        // "noUnusedParameters": false,
+        // "no-unused-variable": false
     }
 }
