@@ -23,6 +23,12 @@ module.exports = function override(config, env) {
         })
     };
     config.resolve.alias['@src'] = path.resolve(SRC_PATH, 'src');
+    config.resolve.alias['@common'] = path.resolve(SRC_PATH, 'src/common');
+    config.resolve.alias['@utils'] = path.resolve(SRC_PATH, 'src/common/utils');
+    config.resolve.alias['@components'] = path.resolve(SRC_PATH, 'src/components');
+    config.resolve.alias['@modules'] = path.resolve(SRC_PATH, 'src/modules');
+    config.resolve.alias['@types'] = path.resolve(SRC_PATH, 'src/types');
+
     // config.resolve.plugins = [(new TsConfigPathsPlugin({
     //     configFileName: "tsconfig.json", compiler: "typescript",
     // }))]

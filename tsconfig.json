@@ -19,7 +19,12 @@
     "noUnusedParameters": false,
     "baseUrl": "./", // 解析非相对模块名的基准目录
     "paths": {
-      "@src/*": ["./src/*"]
+      "@src/*": ["./src/*"],
+      "@common/*": ["./src/common/*"],
+      "@utils/*": ["./src/common/utils/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@types/*": ["./src/types/*"],
+      "@components/*": ["./src/components/*"]
     },
     "allowSyntheticDefaultImports": true
   },
