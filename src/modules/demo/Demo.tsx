@@ -3,7 +3,7 @@ import {Route, Switch, Link, BrowserRouter} from 'react-router-dom';
 import styled from 'styled-components';
 
 
-import Hello from '@modules/demo/test-redux/containers/Hello';
+import Hello from '@modules/demo/test-redux/index.tsx';
 
 import Apple from '@modules/demo/test-router/components/fruits/Apple';
 import Banana from '@modules/demo/test-router/components/fruits/banana';

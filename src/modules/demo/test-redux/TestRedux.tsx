@@ -1,14 +1,14 @@
 import * as React from 'react';
 import {Button} from 'antd';
 
-export interface Props {
+export interface TestReduxProps {
   name: string;
   enthusiasmLevel?: number;
   onIncrement: any;
   onDecrement: any;
 }
 
-function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
+function TestRedux({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: TestReduxProps) {
   if (enthusiasmLevel <= 0) {
     throw new Error('You could be a little more enthusiastic. :D');
   }
@@ -26,7 +26,7 @@ function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
   );
 }
 
-export default Hello;
+export default TestRedux;
 
 // helpers
 

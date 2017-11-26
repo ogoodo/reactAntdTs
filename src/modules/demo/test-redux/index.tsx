@@ -1,6 +1,6 @@
-import Hello from '../components/Hello';
-import * as actions from '../actions/';
-import { StoreState } from '../../../../types/index';
+import TestRedux from './TestRedux';
+import * as actions from './testRedux.action';
+import { StoreState } from '@src/types/index';
 import { connect, Dispatch } from 'react-redux';
 
 export function mapStateToProps({ enthusiasmLevel, languageName }: StoreState) {
@@ -18,4 +18,4 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>)
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hello);
+export default connect(mapStateToProps, mapDispatchToProps)(TestRedux);
