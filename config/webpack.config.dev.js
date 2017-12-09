@@ -164,13 +164,33 @@ module.exports = {
           {
             test: /\.(ts|tsx)$/,
             include: paths.appSrc,
-            loader: require.resolve('ts-loader'),
-            options: {
-                // compact: true,
-                // plugins: [
-                //     ['import', { libraryName: 'antd', style: true }],
-                // ],
-            },
+            use: [
+              {
+                loader: require.resolve('babel-loader'),
+                options: {
+                  compact: true,
+                  plugins: [
+                      ['babel-plugin-import', { libraryName: 'antd', style: true }],
+                      // 修饰符
+                      "babel-plugin-transform-decorators-legacy",
+                  ],
+                },
+
+    // "plugins": [
+    //   [
+    //     "babel-plugin-import",
+    //     {
+    //       "libraryName": "antd",
+    //       "style": true
+    //     }
+    //   ],
+    //   "babel-plugin-transform-decorators-legacy"
+    // ]
+              },
+              {
+                loader: require.resolve('ts-loader'),
+              }
+            ]
           },
 
           // "postcss" loader applies autoprefixer to our CSS.

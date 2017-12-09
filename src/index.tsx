@@ -20,7 +20,7 @@ import store from './reducers/configureStore';
 // import {maproutes, _routes} from './routes'
 
 // eslint-disable-next-line
-console.log(Home);
+// console.log(Home);
 ReactDOM.render(
   <Provider store={store()}>
     <BrowserRouter>

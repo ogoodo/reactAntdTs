@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
 import { enthusiasm } from './test-redux/testRedux.reducer';
 
-const json = {
+const rootReducer = combineReducers({
   testRedux: enthusiasm,
-}
-console.log(json);
-const rootReducer = combineReducers(json);
+});
 
 export default rootReducer;

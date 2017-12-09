@@ -6,7 +6,7 @@ import { IStoreState } from '@src/types/index';
 const json = {
   demo: Demo,
 }
-console.log(json);
+// console.log(json);
 const rootReducer = combineReducers(json);
 
 export default rootReducer;

@@ -8,8 +8,15 @@ import initState from '@src/reducers/initState.tsx';
 //   languageName: 'TypeScript'
 // }
 
-export function enthusiasm(state: ITestRedux = initState.demo.testRedux, action: EnthusiasmAction): ITestRedux {
-  console.log('enthusiasm');
+
+const testRedux = {
+  enthusiasmLevel: 1,
+  languageName: 'TypeScript',
+}
+
+// export function enthusiasm(state: ITestRedux = initState.demo.testRedux, action: EnthusiasmAction): ITestRedux {
+export function enthusiasm(state: ITestRedux = testRedux, action: EnthusiasmAction): ITestRedux {
+  // console.log('enthusiasm');
   let ret: ITestRedux;
   switch (action.type) {
     case constant.INCREMENT_ENTHUSIASM:
@@ -22,7 +29,7 @@ export function enthusiasm(state: ITestRedux = initState.demo.testRedux, action:
     default:
     ret = state;
   }
-  console.log('enthusiasm', ret, initState);
+  // console.log('enthusiasm', ret, initState);
   return ret;
 }
 // export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreState {
