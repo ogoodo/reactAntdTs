@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 /* tslint:disable-next-line:no-unused-variable */
-import {Route, Switch, Link, BrowserRouter} from 'react-router-dom';
+import { Route, Switch, Link, BrowserRouter } from 'react-router-dom';
 // import {createStore} from 'redux';
 // import {enthusiasm} from '@src/modules/demo/test-redux/testRedux.reducer.tsx';
 // import {IStoreState} from '@src/types/index';
 import './index.less';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import Home from './home/Home';
 import store from './reducers/configureStore';
 
@@ -19,16 +19,15 @@ import store from './reducers/configureStore';
 
 // import {maproutes, _routes} from './routes'
 
-
-
-
+// eslint-disable-next-line
 console.log(Home);
 ReactDOM.render(
   <Provider store={store()}>
     <BrowserRouter>
-        <Home/>
+      <Home/>
     </BrowserRouter>
-  </Provider>, document.getElementById('root')
+  </Provider>,
+  document.getElementById('root')
 );
 
 // <Hello />
