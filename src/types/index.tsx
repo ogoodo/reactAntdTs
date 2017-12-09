@@ -1,17 +1,17 @@
 
 
-export interface StoreState {
+// export interface StoreState {
+//     languageName: string;
+//     enthusiasmLevel: number;
+// }
+
+
+export interface IDemo {
     languageName: string;
     enthusiasmLevel: number;
 }
 
 
-// export interface demo {
-//     languageName: string;
-//     enthusiasmLevel?: number;
-// }
-
-
-// export interface StoreState {
-//     demo: demo;
-// }
+export interface IStoreState {
+    demo: IDemo;
+}

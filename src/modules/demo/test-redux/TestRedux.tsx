@@ -1,11 +1,12 @@
 import * as React from 'react';
-import {Button} from 'antd';
+import { Button } from 'antd';
 
 export interface TestReduxProps {
-  name: string;
+  name?: string;
   enthusiasmLevel?: number;
-  onIncrement: any;
-  onDecrement: any;
+  onIncrement?: () => void;
+  onDecrement?: () => void;
+  // onDecrement: any;
 }
 
 function TestRedux({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: TestReduxProps) {
@@ -19,9 +20,9 @@ function TestRedux({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: Test
         Hello {name + getExclamationMarks(enthusiasmLevel)}
       </div>
       <span>enthusiasmLevel</span>
-      <Button onClick={ onIncrement }>增加</Button>
+      <Button onClick={onIncrement}>增加</Button>
       <span>{enthusiasmLevel}</span>
-      <Button onClick={ onDecrement }>减少</Button>
+      <Button onClick={onDecrement}>减少</Button>
     </div>
   );
 }

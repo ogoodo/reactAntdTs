@@ -1,21 +1,25 @@
 import TestRedux from './TestRedux';
 import * as actions from './testRedux.action';
-import { StoreState } from '@src/types/index';
+import { IStoreState, IDemo } from '@src/types/index';
 import { connect, Dispatch } from 'react-redux';
 
-export function mapStateToProps({ enthusiasmLevel, languageName }: StoreState) {
-  console.log(`enthusiasmLevel: ${enthusiasmLevel}, languageName: ${languageName}`);
+export function mergeProps(stateProps: Object, dispatchProps: Object, ownProps: Object) {
+  return Object.assign({}, ownProps, stateProps, dispatchProps);
+}
+
+export function mapStateToProps({ demo }: IStoreState) {
+  // console.log(`enthusiasmLevel: ${enthusiasmLevel}, languageName: ${languageName}`);
   return {
-    enthusiasmLevel,
-    name: languageName,
-  }
+    enthusiasmLevel: demo.enthusiasmLevel,
+    name: demo.languageName,
+  };
 }
 
 export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>) {
   return {
     onIncrement: () => dispatch(actions.incrementEnthusiasm()),
     onDecrement: () => dispatch(actions.decrementEnthusiasm()),
-  }
+  };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TestRedux);
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(TestRedux);

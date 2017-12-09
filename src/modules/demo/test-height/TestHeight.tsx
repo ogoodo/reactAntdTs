@@ -1,10 +1,6 @@
 import React from 'react';
 
-
 class TestHeight extends React.Component {
-    constructor(arg) {
-        super(arg);
-    }
 
     render() {
         return (
@@ -43,4 +39,3 @@ class TestHeight extends React.Component {
 }
 
 export default TestHeight;
-

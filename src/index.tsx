@@ -2,23 +2,20 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 /* tslint:disable-next-line:no-unused-variable */
 import {Route, Switch, Link, BrowserRouter} from 'react-router-dom';
-// 提供antd的本地语言支持
-import {Menu} from 'antd';
-/* tslint:disable-next-line:no-unused-variable */
-const MenuItem = Menu.Item;
-const SubMenu = Menu.SubMenu;
-import {createStore} from 'redux';
-import {enthusiasm} from '@src/modules/demo/test-redux/testRedux.reducer.tsx';
-import {StoreState} from './types/index';
+// import {createStore} from 'redux';
+// import {enthusiasm} from '@src/modules/demo/test-redux/testRedux.reducer.tsx';
+// import {IStoreState} from '@src/types/index';
 import './index.less';
-// import Hello from './containers/Hello';
 import {Provider} from 'react-redux';
 import Home from './home/Home';
+import store from './reducers/configureStore';
 
-const store = createStore < StoreState > (enthusiasm, {
-  enthusiasmLevel: 1,
-  languageName: 'TypeScript'
-});
+// const store2 = createStore < StoreState > (enthusiasm, {
+//   demo: {
+//     enthusiasmLevel: 1,
+//     languageName: 'TypeScript'
+//   }
+// });
 
 // import {maproutes, _routes} from './routes'
 
@@ -27,7 +24,7 @@ const store = createStore < StoreState > (enthusiasm, {
 
 console.log(Home);
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={store()}>
     <BrowserRouter>
         <Home/>
     </BrowserRouter>
@@ -35,3 +32,18 @@ ReactDOM.render(
 );
 
 // <Hello />
+/*
+file: 'file:///Users/chen/github/reactAntdTs/src/index.tsx'
+severity: '错误'
+message: '不能将类型“{ store: () => Store<IStoreState>; children: Element; }
+”分配给类型“IntrinsicAttributes & IntrinsicClassAttributes<Provider> & Readonly<{ children?: ReactNode; }> & ...”。
+
+不能将类型“{ store: () => Store<IStoreState>; children: Element; }”分配给类型“Readonly<ProviderProps>”。
+    属性“store”的类型不兼容。
+      不能将类型“() => Store<IStoreState>”分配给类型“Store<any> | undefined”。
+        不能将类型“() => Store<IStoreState>”分配给类型“Store<any>”。'
+at: '27,13'
+source: 'ts'
+code: '2322'
+
+*/
