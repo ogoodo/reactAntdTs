@@ -1,4 +1,4 @@
-import { IStoreState, IDemo } from '@src/types/index';
+import { IStoreState, ITestRedux } from '@src/types/index';
 import * as constant from './testRedux.constant';
 import { EnthusiasmAction } from './testRedux.action';
 import initState from '@src/reducers/initState.tsx';
@@ -8,9 +8,9 @@ import initState from '@src/reducers/initState.tsx';
 //   languageName: 'TypeScript'
 // }
 
-export function enthusiasm(state: IDemo = initState.demo, action: EnthusiasmAction): IDemo {
+export function enthusiasm(state: ITestRedux = initState.demo.testRedux, action: EnthusiasmAction): ITestRedux {
   console.log('enthusiasm');
-  let ret: IDemo;
+  let ret: ITestRedux;
   switch (action.type) {
     case constant.INCREMENT_ENTHUSIASM:
     ret = {...state, enthusiasmLevel: state.enthusiasmLevel + 1};

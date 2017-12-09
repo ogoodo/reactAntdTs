@@ -6,9 +6,13 @@
 // }
 
 
-export interface IDemo {
+export interface ITestRedux {
     languageName: string;
     enthusiasmLevel: number;
+}
+
+export interface IDemo {
+    testRedux: ITestRedux;
 }
 
 

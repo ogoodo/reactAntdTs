@@ -1,7 +1,9 @@
 
 export default {
     demo: {
-        enthusiasmLevel: 1,
-        languageName: 'TypeScript'
+        testRedux: {
+            enthusiasmLevel: 1,
+            languageName: 'TypeScript',
+        }
     }
 }

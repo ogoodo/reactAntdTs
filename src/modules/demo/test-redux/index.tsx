@@ -7,11 +7,12 @@ export function mergeProps(stateProps: Object, dispatchProps: Object, ownProps: 
   return Object.assign({}, ownProps, stateProps, dispatchProps);
 }
 
-export function mapStateToProps({ demo }: IStoreState) {
+export function mapStateToProps({ demo: { testRedux } }: IStoreState) {
   // console.log(`enthusiasmLevel: ${enthusiasmLevel}, languageName: ${languageName}`);
+  // const { testRedux } = demo;
   return {
-    enthusiasmLevel: demo.enthusiasmLevel,
-    name: demo.languageName,
+    enthusiasmLevel: testRedux.enthusiasmLevel,
+    name: testRedux.languageName,
   };
 }
 
