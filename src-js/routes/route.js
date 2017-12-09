@@ -47,7 +47,7 @@ const List = ({ match }) => (
   </div>
 )
 
-const routeConfig = 
+const routeConfig =
   { path: '/',
    component: One,
   //   indexRoute: { component: Lists },
