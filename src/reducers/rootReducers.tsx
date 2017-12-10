@@ -3,10 +3,8 @@ import { combineReducers } from 'redux';
 import Demo from '@modules/demo/demo-reducers.tsx';
 import { IStoreState } from '@src/types/index';
 
-const json = {
+const rootReducer = combineReducers({
   demo: Demo,
-}
-// console.log(json);
-const rootReducer = combineReducers(json);
+});
 
 export default rootReducer;

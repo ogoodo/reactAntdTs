@@ -1,0 +1,21 @@
+
+.test-composes {
+    background: #666;
+}
+
+.my-local-css {
+    color: #f00;
+}
+
+.mylocalcss {
+    color: #ff0;
+}
+
+.my-composes {
+    composes: test-composes;
+    composes: my-local-css;
+}
+
+:global(.my-global-css) {
+    color: #0f0;
+}

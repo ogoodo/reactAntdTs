@@ -8,11 +8,10 @@ import initState from '@src/reducers/initState.tsx';
 //   languageName: 'TypeScript'
 // }
 
-
 const testRedux = {
   enthusiasmLevel: 1,
   languageName: 'TypeScript',
-}
+};
 
 // export function enthusiasm(state: ITestRedux = initState.demo.testRedux, action: EnthusiasmAction): ITestRedux {
 export function enthusiasm(state: ITestRedux = testRedux, action: EnthusiasmAction): ITestRedux {
