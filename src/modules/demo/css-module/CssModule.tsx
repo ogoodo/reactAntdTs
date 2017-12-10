@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './cssModule.less';
+import * as styles from './cssModule.less';
 // const styles = require('./cssModule.less');
 
 class CssModule extends Component {
@@ -18,7 +18,12 @@ class CssModule extends Component {
         <div className={styles.my_composes}>组合: {styles.my_composes}</div>
         <div className="my-global-css">全局类名: my-global-css</div>
         <div>
-          {JSON.stringify(styles)}
+          {/* {JSON.stringify(styles)} */}
+          {
+            Object.keys(styles).map((key) => {
+              return <div>{`${key}:   ${styles[key]}`}</div>
+            })
+          }
         </div>
       </div>
     );

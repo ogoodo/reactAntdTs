@@ -11,11 +11,12 @@ const dllFilePath = path.join(__dirname, `../build-dll/dll${process.env.NODE_ENV
 
 const getUseLessModules = () => {
   return [
+    // 这个库非常不稳定
     {
       loader: 'typings-for-css-modules-loader',
       options: {
         modules: true,
-        // camelCase: true,
+        camelCase: true,
         // namedExport: 这个中杠css输出不了
         // namedExport: true,
         // localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
