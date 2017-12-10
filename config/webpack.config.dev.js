@@ -149,9 +149,9 @@ module.exports = {
       {
         oneOf: [
           webpackBase.loaderImg(),
+          webpackBase.loaderTsx(),
           webpackBase.lessCommon__dev(),
           webpackBase.lessModules__dev(),
-          webpackBase.loaderTsx(),
           webpackBase.loaderFile(),
         ],
       },
