@@ -13,10 +13,13 @@ class CssModule extends Component {
     return (
       <div>
         <h2>测试样式模块化</h2>
-        <div className={styles['my-local-css']}>局部类名: {styles['my-local-css']}</div>
+        <div className={styles.my_local_css}>局部类名: {styles.my_local_css}</div>
         <div className={styles.mylocalcss}>局部类名: {styles.mylocalcss}</div>
-        <div className={styles['my-composes']}>组合: {styles['my-composes']}</div>
+        <div className={styles.my_composes}>组合: {styles.my_composes}</div>
         <div className="my-global-css">全局类名: my-global-css</div>
+        <div>
+          {JSON.stringify(styles)}
+        </div>
       </div>
     );
   }

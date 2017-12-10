@@ -7,7 +7,9 @@ export interface StateLessProps {
 }
 
 export default ({age = 16, ...props}: StateLessProps) => {
-  return <div>
-    {props.name}: {age}
-  </div>;
+  return (
+    <div>
+      {props.name}: {age}
+    </div>
+  );
 };

@@ -25,6 +25,6 @@ export default class DemoTs extends React.Component<DemoTsProps, any> {
         <StateLess name="我是姓名" age={18} />
         <StateLess name="我是姓名" />
       </div>
-    )
+    );
   }
 }
