@@ -89,33 +89,33 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/290
     // `web` extension prefixes have been added for better support
     // for React Native Web.
-    extensions: [
-      '.web.ts',
-      '.ts',
-      '.web.tsx',
-      '.tsx',
-      '.web.js',
-      '.js',
-      '.json',
-      '.web.jsx',
-      '.jsx',
-      '.less',
-    ],
-    alias: {
-      
-      // Support React Native Web
-      // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-      'react-native': 'react-native-web',
-      '@src': path.resolve(paths.appSrc, ''),
-      '@modules': path.resolve(paths.appSrc, 'modules'),
-      '@common': path.resolve(paths.appSrc, 'common'),
-      '@utils': path.resolve(paths.appSrc, 'common/utils'),
-      '@components': path.resolve(paths.appSrc, 'components'),
-      // '@components': path.resolve(SRC_PATH, 'src/components'),
-      '@main': path.resolve(paths.appSrc, 'main'),
-      '@style': path.resolve(paths.appSrc, 'style'),
-      '@types': path.resolve(paths.appSrc, 'types'),
-    },
+    // extensions: [
+    //   '.web.ts',
+    //   '.ts',
+    //   '.web.tsx',
+    //   '.tsx',
+    //   '.web.js',
+    //   '.js',
+    //   '.json',
+    //   '.web.jsx',
+    //   '.jsx',
+    //   '.less',
+    // ],
+    extensions: webpackBase.getExtName(),
+    alias: webpackBase.getAlias(),
+    // alias: {
+    //   // Support React Native Web
+    //   // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
+    //   'react-native': 'react-native-web',
+    //   '@src': path.resolve(paths.appSrc, ''),
+    //   '@modules': path.resolve(paths.appSrc, 'modules'),
+    //   '@common': path.resolve(paths.appSrc, 'common'),
+    //   '@utils': path.resolve(paths.appSrc, 'common/utils'),
+    //   '@components': path.resolve(paths.appSrc, 'components'),
+    //   '@main': path.resolve(paths.appSrc, 'main'),
+    //   '@style': path.resolve(paths.appSrc, 'style'),
+    //   '@types': path.resolve(paths.appSrc, 'types'),
+    // },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
       // This often causes confusion because we only process files within src/ with babel.

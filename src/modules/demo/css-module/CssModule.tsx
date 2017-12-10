@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import * as styles from './cssModule.less';
-// const styles = require('./cssModule.less');
+// import * as styles from './cssModule.less';
+const styles = require('./cssModule.less');
 
 class CssModule extends Component {
   constructor(props, context) {

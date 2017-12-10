@@ -5,8 +5,9 @@
   "homepage": ".",
   "scripts": {
     "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
     "start-stop": "node custom-scripts/customized-config.js start",
-    "build": "node custom-scripts/customized-config.js build",
+    "build-stop": "node custom-scripts/customized-config.js build",
     "test": "node custom-scripts/customized-config.js test --env=jsdom"
   },
   "dependencies": {

@@ -101,14 +101,32 @@ const getUseLessCommon = () => {
 
 module.exports = {
 
+  getExtName() {
+    return [
+      '.web.ts',
+      '.ts',
+      '.web.tsx',
+      '.tsx',
+      '.web.js',
+      '.js',
+      '.json',
+      '.web.jsx',
+      '.jsx',
+      '.less',
+    ];
+  },
+
   getAlias() {
     return {
       'react-native': 'react-native-web',
+      '@src': path.resolve(paths.appSrc, ''),
       '@modules': path.resolve(paths.appSrc, 'modules'),
       '@common': path.resolve(paths.appSrc, 'common'),
       '@utils': path.resolve(paths.appSrc, 'common/utils'),
+      '@components': path.resolve(paths.appSrc, 'components'),
       '@main': path.resolve(paths.appSrc, 'main'),
       '@style': path.resolve(paths.appSrc, 'style'),
+      '@types': path.resolve(paths.appSrc, 'types'),
     };
   },
 
