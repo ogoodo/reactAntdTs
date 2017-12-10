@@ -12,14 +12,21 @@ const dllFilePath = path.join(__dirname, `../build-dll/dll${process.env.NODE_ENV
 const getUseLessModules = () => {
   return [
     {
-      loader: require.resolve('css-loader'),
+      loader: 'typings-for-css-modules-loader',
       options: {
-        importLoaders: 1,
         modules: true,
-        // localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
-        localIdentName: '[name]__[local]___[hash:base64:5]',
-      },
+        namedExport: true
+      }
     },
+    // {
+    //   loader: require.resolve('css-loader'),
+    //   options: {
+    //     importLoaders: 1,
+    //     modules: true,
+    //     // localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
+    //     localIdentName: '[name]__[local]___[hash:base64:5]',
+    //   },
+    // },
     {
       loader: require.resolve('postcss-loader'),
       options: {
@@ -216,6 +223,13 @@ module.exports = {
       exclude: path.resolve(paths.appSrc, 'modules/'),
       use: [
         require.resolve('style-loader'),
+        // {
+        //   loader: 'typings-for-css-modules-loader',
+        //   options: {
+        //     modules: true,
+        //     namedExport: true
+        //   }
+        // },
       ].concat(getUseLessCommon()),
     };
   },
@@ -226,6 +240,13 @@ module.exports = {
       include: path.resolve(paths.appSrc, 'modules/'),
       use: [
         require.resolve('style-loader'),
+        // {
+        //   loader: 'typings-for-css-modules-loader',
+        //   options: {
+        //     modules: true,
+        //     namedExport: true
+        //   }
+        // },
       ].concat(getUseLessModules()),
     };
   },
@@ -246,7 +267,6 @@ module.exports = {
       test: /\.less$/,
       include: path.resolve(paths.appSrc, 'modules/'),
       use: ExtractTextPlugin.extract({
-
         fallback: require.resolve('style-loader'),
         use: getUseLessModules(),
       }),

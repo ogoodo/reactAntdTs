@@ -10,7 +10,7 @@ class TestAntd extends Component {
   }
 
   onAddClick = () => {
-    // tslint-disable-next-line
+    // eslint-disable-next-line
     console.log('click');
   }
 

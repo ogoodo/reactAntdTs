@@ -13,6 +13,7 @@ export const _routes = [
       { name: 'antd', path: '/demo/test-antd' },
       { name: '测试Redux', path: '/demo/test-redux' },
       { name: 'CssModule', path: '/demo/css-module' },
+      { name: 'DemoTs', path: '/demo/demo-ts' },
       { name: '测试高度', path: '/demo/test-height' },
     ]
   },
