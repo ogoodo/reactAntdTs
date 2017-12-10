@@ -17,9 +17,9 @@ const getUseLessModules = () => {
         modules: true,
         // camelCase: true,
         // namedExport: 这个中杠css输出不了
-        namedExport: true,
+        // namedExport: true,
         // localIdentName: '[path]___[name]__[local]___[hash:base64:5]',
-        // localIdentName: '[name]__[local]___[hash:base64:5]',
+        localIdentName: '[name]__[local]___[hash:base64:5]',
       }
     },
     // {

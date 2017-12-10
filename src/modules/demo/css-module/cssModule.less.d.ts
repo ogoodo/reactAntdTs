@@ -1,4 +1,9 @@
-export const test_composes: string;
-export const my_local_css: string;
-export const mylocalcss: string;
-export const my_composes: string;
+export interface ICssModuleLess {
+  'test_composes': string;
+  'my_local_css': string;
+  'mylocalcss': string;
+  'my_composes': string;
+  'some-class': string;
+}
+
+export const locals: ICssModuleLess;
